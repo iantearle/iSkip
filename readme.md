@@ -28,9 +28,9 @@ Addtionally by setting a number in cycle tells iSkip how fast to change the imag
 
 	cycle
 
-If you want to have a different target area than the image which is changed, use the ```img``` option and pass in the jQuery object for the image which should change. Run the iskip method on the target.
+If you want to have a different target area than the image which is changed, use the ```img``` option and pass in the jQuery object for the image which should change. Run the ```iskip``` method on the target.
 
-	```$('.thumbnailTarget').iskip({images:array, method:mousemove, cycle:3, img:$('.thumbnailTarget img')});```  
+	$('.thumbnailTarget').iskip({images:array, method:mousemove, cycle:3, img:$('.thumbnailTarget img')}); 
 
 See the statement below for how the iSkip demo was set up on this website.
 
