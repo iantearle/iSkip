@@ -16,7 +16,7 @@ The simplest implementation to get iSkip working is by adding the code below. Th
 
 ### Options
 
-You can specify extra options to ad greater control to your iSkip implementation.
+You can specify extra options to add greater control to your iSkip implementation.
 
 There are two methods for iSkip to loop through the images.
 
@@ -27,6 +27,10 @@ There are two methods for iSkip to loop through the images.
 Addtionally by setting a number in cycle tells iSkip how fast to change the images in the container, the lower the number the faster iSkip skips the images.
 
 	cycle
+
+If you want to have a different target area than the image which is changed, use the ```img``` option and pass in the jQuery object for the image which should change. Run the ```iskip``` method on the target.
+
+	$('.thumbnailTarget').iskip({images:array, method:mousemove, cycle:3, img:$('.thumbnailTarget img')}); 
 
 See the statement below for how the iSkip demo was set up on this website.
 
