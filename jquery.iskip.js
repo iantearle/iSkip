@@ -29,10 +29,12 @@ jQuery.fn.iskip = function(options) {
 			pic = options.img;
 		}
 
-		$.each(options.images, function(index, record) {
-			var o = $("<img>").attr("src",record);
-			$("body").append(o);
-			o.hide();
+		$(window).load(function() {
+			$.each(options.images, function(index, record) {
+				var o = $("<img>").attr("src",record);
+				$("body").append(o);
+				o.hide();
+			});
 		});
 
 		for(var x=1; x<=options.cycle; x++) {
