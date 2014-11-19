@@ -7,6 +7,10 @@
  * $Date: 2009-26-06 11:12:02 -0000 (Wed, 06 Feb 2008)
  *
  *	ChangeLog:
+ *
+ *	19 Nov 2014
+ *	Added Touchmove event
+ *
  *	28 Jan 2013
  *	Tidied code for better readability
  *
@@ -51,7 +55,18 @@ jQuery.fn.iskip = function(options) {
 				pic.attr("src",imgArr[Math.floor((e.pageX - target.offset().left) / (target.width()/imgArr.length))]);
 			});
 		}
-
+		
+		if (options.method == "touchmove") {
+			target.bind('touchmove',function(e) {
+				e.preventDefault();
+				var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+				var elm = $(this).offset();
+				var x = touch.pageX - elm.left;
+				var y = touch.pageY - elm.top;
+				pic.attr("src", imgArr[Math.floor((x - target.offset().left) / (target.width() / imgArr.length))]);
+			});
+		}
+		
 		if(options.method == "click") {
 			var follower;
 			if(!$.browser.msie) {
